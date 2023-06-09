@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .login {
+        border: 1px solid black;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+
+        width: 20%;
+        height: 18vh;
+        margin-top: 17%;
+        padding: 3%;
+      }
+      .input {
+        width: 15rem;
+        background-color: bisque;
+      }
+      .label {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+      }
+      .form {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+      .btn {
+        background-color: rgb(62, 62, 235);
+        color: white;
+        font-size: large;
+        border: 0px blue solid;
+      }
+    </style>
+  </head>
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <b>{{ message }}</b>
+  {% endfor %} {% endif %} {% endwith %}
+  <body>
+    <div class="login">
+      <form method="post" class="form">
+        <label class="label" for="">Username:</label>
+        <input name="Username" type="text" class="input" /><br />
+        <label class="label" for="">Password:</label>
+        <input name="Password" type="password" class="input" /><br />
+        <button class="btn">submit</button>
+      </form>
+    </div>
+  </body>
+</html>
