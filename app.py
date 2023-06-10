@@ -303,4 +303,4 @@ def orders():
         return render_template('ordersdisplay.html',data=data)
     else:
         return redirect(url_for('login'))
-app.run(debug=True,use_reloader=True)
+app.run()
