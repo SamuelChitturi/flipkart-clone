@@ -21,7 +21,7 @@ with mysql.connector.connect(host=host,password=password,user=user,db=db):
     cursor.execute("create table if not exists additems(itemid varchar(30) primary key,name varchar(30),description varchar(20),category enum('electronics','grocery','fashion','home&kitchen'),price integer)")
     cursor.execute("create table if not exists adminreg(username varchar(30) primary key,password varchar(20),email varchar(50))")
     cursor.execute("create table if not exists registration(username varchar(50) primary key,mobile varchar(20) unique,email varchar(50) unique,address varchar(50),password varchar(20))")
-    cursor.execute("create table if not exists orders(oid int primary key,itemid varchar(9),itemname varchar(20),q int,total int,username varchar(30),foreign key (itemid) references additems(itemid) on update cascade on delete cascade,foreign key (username) references users(username))")
+    cursor.execute("create table if not exists orders(oid int primary key,itemid varchar(9),itemname varchar(20),q int,total int,username varchar(30),foreign key (itemid) references additems(itemid) on update cascade on delete cascade,foreign key (username) references registration(username))")
 #deployment part ends
 @app.route('/',methods=['GET','POST'])
 def home():
